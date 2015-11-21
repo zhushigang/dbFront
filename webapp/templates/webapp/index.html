@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MPCS 53001 SemiFinal Project</title>
+</head>
+<body>
+    <ul>
+            <li><a href="/webapp/championList">View the Champions available to play! </a></li>
+    </ul>
+    <form method = "post" action = {% url 'summoner' %}>
+            {% csrf_token %}
+            Search for a Summoner:<br>
+            <input type="text" name="sName">
+            <br>
+            <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
