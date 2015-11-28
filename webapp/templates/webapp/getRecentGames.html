@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RecentGames</title>
+</head>
+<body>
+
+{% if games %}
+    <ul>
+        {% for game in games %}
+            <li>Game start on {{ game.creation }} for {{ game.duration }} minutes. </li>
+
+        {% endfor %}
+
+    </ul>
+{% else %}
+    <p>No Game found</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+</head>
+<body>
+{% if friends %}
+    {% for friend in friends %}
+        <li>{{ friend.name }}</li>
+    {% endfor %}
+{% else %}
+    <p>No Friend found for this summoner</p>
+{% endif %}
+</body>
+</html>

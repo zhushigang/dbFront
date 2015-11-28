@@ -7,6 +7,7 @@
 <body>
     <ul>
             <li><a href="/webapp/championList">View the Champions available to play! </a></li>
+            <li><a href="/webapp/mostPlayed">View the Most played Champion </a></li>
     </ul>
     <form method = "post" action = {% url 'summoner' %}>
             {% csrf_token %}
@@ -17,5 +18,6 @@
 
     </form>
 
+<p><a href="/webapp/readme">README</a></p>
 </body>
 </html>

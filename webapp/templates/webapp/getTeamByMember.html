@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team</title>
+</head>
+<body>
+    {% if teams %}
+        {% for team in teams %}
+            <li><a href="/webapp/getTeam/?id={{ team.id }}">{{ team.name }}</a></li>
+            Created on {{ team.createDate }}. Last Game on {{ team.lastGame }}
+        {% endfor %}
+    {% else %}
+        <p>This player is not on a team</p>
+    {% endif %}
+</body>
+</html>
