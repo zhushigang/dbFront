@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+Add a Summoner
+<form role="form" method="post" action="{% url 'addSummoner' %}">
+        {% csrf_token %}
+        <input placeholder="Summoner" required="" name="summoner">
+        <input placeholder="Level" required="" name="level">
+
+        <button type="submit">Submit</button>
+</form>
+Delete a Summoner
+<form role="form" method="post" action="{% url 'deleteSummoner' %}">
+        {% csrf_token %}
+        <input placeholder="Summoner" required="" name="summoner">
+
+        <button type="submit">Submit</button>
+</form>
+Add a Champion
+<form role="form" method="post" action="{% url 'addChampion' %}">
+        {% csrf_token %}
+        <input placeholder="Champion" required="" name="champion">
+        <input placeholder="Title" required="" name="title">
+
+        <button type="submit">Submit</button>
+</form>
+Delete a Champion
+<form role="form" method="post" action="{% url 'deleteChampion' %}">
+        {% csrf_token %}
+        <input placeholder="Champion" required="" name="champion">
+
+        <button type="submit">Submit</button>
+</form>
+Add an Item
+<form role="form" method="post" action="{% url 'addItem' %}">
+        {% csrf_token %}
+        <input placeholder="Item" required="" name="item">
+        <input placeholder="description" required="" name="description">
+        <input placeholder="Item Group" required="" name="group">
+
+        <button type="submit">Submit</button>
+</form>
+Delete an Item
+<form role="form" method="post" action="{% url 'deleteItem' %}">
+        {% csrf_token %}
+        <input placeholder="Item" required="" name="item">
+
+        <button type="submit">Submit</button>
+</form>
+<li><a href="/webapp/logout">Log out </a></li>
+</body>
+</html>

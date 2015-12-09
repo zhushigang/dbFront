@@ -142,3 +142,54 @@ def getFriends(sid):
     for (sName,) in data:
         results.append({"name":sName})
     return results
+
+def addSummoner(sName, level, id, icon):
+    query = '''
+        INSERT INTO Summoner
+        VALUES (%d, "%s", %d, %d)
+        '''% (id, sName, int(level), icon)
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+def deleteSummoner(sName):
+    query = '''
+        DELETE FROM Summoner
+        WHERE sName = "%s"
+        '''% sName
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+def addChampion(cName, title, id):
+    query = '''
+        INSERT INTO Champion
+            VALUES (%d, "%s", "%s")
+        ''' % (id, cName, title)
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+def deleteChampion(cName):
+    query = '''
+        DELETE FROM Champion
+        WHERE cName = "%s"
+        ''' % cName
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+def addItem(iName, description, itemGroup, id):
+    query = '''
+        INSERT INTO Item
+        VALUES(%d, "%s", "%s", "%s")
+        ''' % (id, iName, description, itemGroup)
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+def deleteItem(iName):
+    query = '''
+        DELETE FROM Item
+        WHERE iName = "%s"
+        ''' % iName
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+
+
